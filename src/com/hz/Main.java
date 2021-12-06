@@ -1,28 +1,31 @@
 package com.hz;
 
+import com.hz.cards.GraduationCard;
+import com.hz.cards.NormalCard;
+import com.hz.cards.PostCard;
+import com.hz.cards.XmasCard;
+
 public class Main {
 
-    // READ THE INSTRUCTIONS IN THIS METHOD, PLEASE!!!
     public static void main(String[] args) {
 
-        // Lets print some cards
+        // Creation of instances
         Printer printer = new Console();
 
-        // INSTRUCTIONS, READ CAREFULLY !!!!!!!!!!!!!!!!!!!!!!!!!!
-        // For a normal postcard use: true, false
-        // For a graduation card use: false, true
+        PostCard normal = new NormalCard(printer);
+        PostCard graduation = new GraduationCard(printer);
+        PostCard xmas = new XmasCard(printer);
 
+        // Printing
+        printer.printLine("Normal card");
+        normal.print();
 
-        // ONLY SET ONE OF THE BOOLEAN PARAMETERS TO TRUE!!!!
-        // DON'T FORGET THAT!
+        printer.printLine("");
+        printer.printLine("Graduation card");
+        graduation.print();
 
-        // WE NEED TO MAKE THIS MESSY CODE BETTER IMHO, MAYBE ONE OF THE SKILLED
-        // HBO-ICT STUDENTS CAN HELP US OUT.
-
-        // IF WE HAVE TO ADD AN OTHER TYPE OF CARD...
-        // ...I QUIT THIS JOB.
-        PostCard card = new PostCard(printer, false, true);
-
-        card.print();
+        printer.printLine("");
+        printer.printLine("Xmas card");
+        xmas.print();
     }
 }
